@@ -2,6 +2,7 @@
 
 
 # import <
+from pandas import DataFrame
 import dash_bootstrap_components as dbc
 from dash import dcc, html, Dash, Input, State, Output, dash_table
 
@@ -153,13 +154,35 @@ def datatableCallback(pRevValue: int, pSpinValue: int):
 def graphCallback(pDatatableData: list):
     '''  '''
 
-    print(pDatatableData)
+    df = DataFrame(pDatatableData)
+    return [
 
-    # return dcc.Graph(
-    #
-    #     #
-    #
-    # )
+        dcc.Graph(
+
+            figure = {
+
+                'data' : [{
+
+                    'y' : df[k],
+                    'type' : 'bar',
+                    'x' : df['Revolution']
+
+                }],
+                'layout' : {
+
+                    'width' : 600,
+                    'height' : 220,
+                    'xaxis' : {'automargin' : True},
+                    'margin' : {'t' : 1, 'l' : 1, 'r' : 1},
+                    'yaxis' : {'automargin' : True, 'title' : {'text' : k}}
+
+                }
+
+            }
+
+        )
+
+    for k in list(pDatatableData[0].keys())[1:]]
 
 
 # main <
