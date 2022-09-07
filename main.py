@@ -206,6 +206,6 @@ def graphCallback(pDatatableData: list):
 if (__name__ == '__main__'):
 
     application.layout = layoutFunction()
-    application.run_server(debug = True)
+    application.run_server()
 
 # >
