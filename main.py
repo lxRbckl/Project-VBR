@@ -55,7 +55,7 @@ def layoutFunction():
                 dbc.Row(
 
                     justify = 'between',
-                    style = dict(margin = '2.5%'),
+                    style = dict(margin = '5%'),
                     children = [
 
                         dbc.Col(
@@ -165,16 +165,33 @@ def graphCallback(pDatatableData: list):
 
                     'y' : df[k],
                     'type' : 'bar',
+                    'text' : df[k],
                     'x' : df['Revolution']
 
                 }],
                 'layout' : {
 
                     'width' : 600,
-                    'height' : 220,
-                    'xaxis' : {'automargin' : True},
-                    'margin' : {'t' : 1, 'l' : 1, 'r' : 1},
-                    'yaxis' : {'automargin' : True, 'title' : {'text' : k}}
+                    'height' : 150,
+                    'margin' : {'t' : 0, 'b' : 0},
+                    'padding' : {'t' : 1, 'l' : 9, 'r' : 1},
+                    'xaxis' : {
+
+                        'dtick' : 1,
+                        'gridwidth' : 0.5,
+                        'automargin' : True,
+                        'showticklabels' : True
+
+                    },
+                    'yaxis' : {
+
+                        'dtick' : 0.5,
+                        'gridwidth' : 0.5,
+                        'automargin' : True,
+                        'title' : {'text' : k},
+                        'showticklabels' : True,
+
+                    }
 
                 }
 
