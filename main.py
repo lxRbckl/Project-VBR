@@ -15,17 +15,17 @@ gFeature = {
     'rev' : {
 
         'min' : 0,
-        'max' : 50,
+        'max' : 75,
         'value' : 20,
         'name' : '# Revolution'
 
     },
-    'spin' : {
+    'incr' : {
 
         'min' : 0,
-        'max' : 5,
+        'max' : 100,
         'value' : 3,
-        'name' : '# Spin'
+        'name' : '# Incr'
 
     }
 
@@ -72,6 +72,7 @@ def layoutFunction():
 
                                 ),
                                 dbc.Input(
+
                                     step = 1,
                                     id = f'{k}Id',
                                     type = 'number',
@@ -119,16 +120,17 @@ def layoutFunction():
 
     Output('colDatatableId', 'children'),
     Input('revId', 'value'),
-    Input('spinId', 'value')
+    Input('incrId', 'value')
 
 )
-def datatableCallback(pRevValue: int, pSpinValue: int):
+def datatableCallback(pRevValue: int, pIncrValue: int):
     '''  '''
 
     d = {
 
         'Revolution' : [(r + 1) for r in range(pRevValue)],
-        **{f'Spin {s + 1}' : [None for r in range(pRevValue)] for s in range(pSpinValue)}
+        'Time' : [None for r in range(pRevValue)],
+        **{f'{s + 1}' : [None for r in range(pRevValue)] for s in range(pIncrValue)}
 
     }
 
@@ -137,7 +139,7 @@ def datatableCallback(pRevValue: int, pSpinValue: int):
         editable = True,
         id = 'datatableId',
         row_deletable = True,
-        style_data = dict(textAlign = 'center'),
+        style_data = dict(textAlign = 'center', width = 'auto'),
         style_header = dict(paddingLeft = 15, paddingRight = 15),
         data = [{k : d[k][i] for k in d.keys()} for i in range(pRevValue)],
         columns = [{'id' : k, 'name' : k, 'deletable' : True} for k in d.keys()]
@@ -172,7 +174,7 @@ def graphCallback(pDatatableData: list):
                 'layout' : {
 
                     'width' : 600,
-                    'height' : 150,
+                    'height' : 250,
                     'margin' : {'t' : 0, 'b' : 0},
                     'padding' : {'t' : 1, 'l' : 9, 'r' : 1},
                     'xaxis' : {
@@ -199,13 +201,13 @@ def graphCallback(pDatatableData: list):
 
         )
 
-    for k in list(pDatatableData[0].keys())[1:]]
+    for k in list(pDatatableData[0].keys()) if (k not in ['Revolution', 'Time'])]
 
 
 # main <
 if (__name__ == '__main__'):
 
     application.layout = layoutFunction()
-    application.run_server()
+    application.run_server(debug = True)
 
 # >
