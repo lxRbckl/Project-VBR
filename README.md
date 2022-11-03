@@ -1,4 +1,4 @@
-## `Project RB8`
+## [`Project RB8`](http://lxrbckl.com/Project-RB8)
 > 
 
 ### `Installation`
