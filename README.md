@@ -1,9 +1,9 @@
-## [`Project RB8`](http://lxrbckl.com/Project-RB8)
+## [`Project VBR`](http://lxrbckl.com/Project-VBR)
 > 
 
 ### `Installation`
 ```
-git clone https://github.com/lxRbckl/Project-RB8.git
-cd Project-RB8
+git clone https://github.com/lxRbckl/Project-VBR.git
+cd Project-VBR
 pip3 install -r requirements.txt
 ```
