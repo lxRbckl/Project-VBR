@@ -1,5 +1,5 @@
 ## [`Project VBR`](http://lxrbckl.com/Project-VBR)
-> 
+> Visualize roulette wheel data from visual ballistics.
 
 ### `Installation`
 ```
