@@ -1,2 +1,2 @@
 ## [`Project VBR`](http://lxrbckl.com/Project-VBR)
-> Translate and conceptualize roulette wheel data from visual ballistics. Spring 2022.
+> Interpret and create a conceptual model for data from visual ballistics on roulette wheels. Spring 2022.
