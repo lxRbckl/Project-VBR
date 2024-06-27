@@ -5,7 +5,7 @@
 
 [**`Python`**](https://github.com/lxRbckl/lxRbckl/blob/main/Python/README.md)
 [`pandas`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pandas.md)
-[`dash`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/pygithub.md)
+[`dash`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/dash.md)
 [`dash_bootstrap_components`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/dash_bootstrap_components.md)
 
 # 
